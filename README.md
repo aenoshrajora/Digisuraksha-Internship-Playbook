@@ -15,8 +15,6 @@ This **2-month journey (July-August 2025)** covers **hands-on tasks, structured 
 ```bash
 Digisuraksha Internship Playbook/
 |-- README.md
-|-- Attendance Logs
-    |-- <Timestamp: Date> Attendance.png
 |-- Month 1
     |-- Week 1
         |-- Tasks
@@ -56,10 +54,6 @@ Digisuraksha Internship Playbook/
 
 |-- LICENSE    
 ```
-
-## Attendance & Progress
-
-A detailed weekly attendance and deliverable submission log is maintained [here](/Attendance/Attendance%20Logs.md)
 
 ## About the Organization
 
