@@ -18,36 +18,36 @@ Digisuraksha Internship Playbook/
 |-- Month 1
     |-- Week 1
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
     |-- Week 2
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
     |-- Week 3
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
     |-- Week 4
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
 |-- Month 2
     |-- Week 5
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
     |-- Week 6
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
     |-- Week 7
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
     |-- Week 8
         |-- Tasks
-        |-- Practical
+        |-- Resources
         |-- Reports
 |-- Projects
     |-- Projects assigned during the internship
