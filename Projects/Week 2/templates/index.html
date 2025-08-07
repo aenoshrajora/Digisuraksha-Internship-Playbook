@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>URL Shortener</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 16px;
+    }
+
+    .short-link-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .short-link-group input {
+      flex: 1;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #6e8efb, #a777e3);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .result-box {
+      margin-top: 30px;
+      padding: 20px;
+      border: 2px solid #00ff80;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6px);
+      text-align: center;
+      color: #7e0404;
+      box-shadow: 0 0 10px #06347a, 0 0 20px #b700ff;
+      font-weight: bold;
+      width: 60%;
+    }
+
+    .result-box a {
+      color: #0ae5ec;
+      text-decoration: none;
+      word-break: break-all;
+      display: block;
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .result-glow {
+      font-size: 1.2rem;
+      text-shadow: 0 0 10px #ffffff, 0 0 20px #6200ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>URL Shortener</h2>
+    <form method="POST">
+      <label for="long_url">Destination</label>
+      <input type="text" name="long_url" id="long_url" placeholder="https://example.com/my-long-url" required>
+
+      <label for="title">Title (optional)</label>
+      <input type="text" name="title" id="title" placeholder="Enter a title for your link">
+
+      <label for="custom_slug">Custom back-half (optional)</label>
+      <div class="short-link-group">
+        <input type="text" name="custom_slug" id="custom_slug" placeholder="my-custom-link">
+      </div>
+
+      <div class="note">
+        You can use up to 3 custom short links per month.
+      </div>
+
+      <input type="submit" value="Create Short Link">
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="error">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  {% if short_url %}
+    <div class="result-box">
+      <div class="result-glow">Created Shortener Link Here</div>
+      <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+    </div>
+  {% endif %}
+
+</body>
+</html>
